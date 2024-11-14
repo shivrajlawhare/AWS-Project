@@ -14,7 +14,7 @@ const ImageUpload = () => {
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/images');
+      const response = await axios.get('http://13.61.25.188:3000/images');
       setImages(response.data);
     } catch (error) {
       console.error('Error fetching images:', error);
@@ -31,7 +31,7 @@ const ImageUpload = () => {
     formData.append('description', description);
 
     try {
-      await axios.post('http://localhost:3000/upload', formData, {
+      await axios.post('http://13.61.25.188:3000/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       fetchImages();
